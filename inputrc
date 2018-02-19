@@ -1,0 +1,14 @@
+#run: bind -f ~/.inputrc to source this file
+#
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+set show-all-if-ambiguous on 
+set completion-ignore-case on
+"\ez": 'cd -\015'
+set editing-mode vi
+
+# vi settings, map escape to kj key strokes
+$if mode=vi
+   set keymap vi-insert
+   "kj": vi-movement-mode # remap escape
+$endif
