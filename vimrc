@@ -34,15 +34,19 @@ set backspace=indent,eol,start
 "set autoindent
 
 " Whitespace
-"set wrap
+set wrap
 set textwidth=79
 set formatoptions=tcqrn1
 "set noshiftround
 
 "trigger autoread when changing buffers inside while inside vim
 au FocusGained, BufEnter * : checktime
+"during insert, kj escapes, `^ is so that the cursor doesn't move
+inoremap kj <Esc>`^
+"during insert, lkj escapes and saves
+inoremap lkj <Esc>`^:w<CR>
+"during insert,capes and saves and QUITS
+inoremap ;lkj <Esc>:wq<CR>  
+"if &wrap set, go+=b\r;, if not go=-b\r
+:nnoremap <silent><expr> <f2> ':set wrap! go'.'-+'[&wrap]."=b\r"
 
- " Call the .vimrc.plug file
-if filereadable(expand("~/.vimrc.plug"))
-   source ~/.vimrc.plug
-endif
