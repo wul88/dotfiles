@@ -23,9 +23,16 @@ highlight Comment cterm=bold ctermbg=DarkGray ctermfg=LightBlue
 highlight Normal cterm=none
 syntax region Commnd matchgroup=Commnd start=+{ + end=+&+
 highlight link Commnd SpecialComment
-let skip_defaults_vim=1     " disable viminfo file
-set viminfo=""
-    
+"let skip_defaults_vim=1     " disable viminfo file
+"set viminfo=""
+
+if has('persistent_undo')
+    set undodir=~/.vim/undodir
+    set undofile
+    set undolevels=120
+    set undoreload=60
+endif
+
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
  
