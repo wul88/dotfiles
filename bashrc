@@ -72,7 +72,7 @@ if [ -d /afs/bx.psu.edu/service/etc/bash.d/ ]; then
 fi
 
 alias ls='ls --color'
-LS_COLORS='di=38;5;27:fi=0:ln=38;5;51:or=48;5;232:mi=0:ex=35:*.fa=91:*.fa*=91:*.gz=90:*.sam=38;5;15:*.bam=38;5;15:*.tar=32'
+LS_COLORS='di=38;5;27:fi=0:ln=38;5;51:or=48;5;232:mi=0:ex=35:*.fa=91:*.gz=90:*.sam=91:*.bam=38;5;15:*.tar=32'
 export LS_COLORS
 alias la='ls -al'
 
